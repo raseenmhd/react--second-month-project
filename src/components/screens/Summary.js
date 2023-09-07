@@ -1,9 +1,13 @@
 import React from 'react'
 import { styled } from "styled-components";
-// import Select from 'react-select/dist/declarations/src/Select';
+import { Helmet } from 'react-helmet';
+
 function Summary() {
   return (
-    <>
+    <>  
+        <Helmet>
+            <title>Summary</title>
+        </Helmet>
         <SummaryContainer>
             <Header>
                 <SearchBar>
@@ -86,7 +90,7 @@ function Summary() {
   )
 }
 const SummaryContainer =styled.section`
-    padding: 35px 60px ;
+    padding: 45px 60px ;
     width: 45%; 
 `;
 const Header = styled.header`
@@ -112,7 +116,7 @@ const SearchIcon = styled.img`
     width: 100%;
 `;
 const StatisticsContainer = styled.section`
-    margin-top: 70px;
+    margin-top: 63px;
 `;
 const StatisticsTop = styled.div`
     display: flex;
@@ -133,17 +137,20 @@ const MonthOptions = styled.option`
 const StatisticsMain = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-top: 35px
+    margin-top: 35px;
 `;
 const LeftContainer = styled.div`
-    width: 45%;
-   
+    width: 46%;
 `;
 const TopBox = styled.div`
     background-color: #f4e7e4;
-    padding: 30px 20px;
+    padding: 25px 20px;
     border-radius: 15px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
+    &:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    };
+    
 `;
 const DeliveryIcon = styled.div`
     width: 50px;
@@ -162,11 +169,18 @@ const OrderCount = styled.h5`
 `;
 const BottomBox = styled.div`
     background-color: #e6f4ff;
-    padding: 30px 20px;
+    padding: 25px 20px;
     border-radius: 15px;
+    &:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    };
 `;
 const RightContainer = styled.div`
     width: 50%;
+    border-radius: 15px;
+    &:hover{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    };
 `;
 const SaleGraphImage = styled.img`
     display: block;

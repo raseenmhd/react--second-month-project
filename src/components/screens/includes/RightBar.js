@@ -206,7 +206,7 @@ const ProductsItem = styled.ul`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin: 30px 0 35px;
+    margin: 37px 0 35px;
 `;
 const ProductImageContainer = styled.li`
     width: 20%;

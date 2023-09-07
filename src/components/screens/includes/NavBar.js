@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import styled from "styled-components"
 function NavBar() {
   return (
@@ -9,27 +10,27 @@ function NavBar() {
                 <Logo src={require("../../../Assets/images/logo.svg").default} />
             </NavLogo>
             <NavItems>
-                <Navitem>
+                <Navitem to="/" classname={({isActive})=>(isActive ? "active" : "")}>
                     Summary 
                     <NavItemImage src={require("../../../Assets/images/Book.svg").default}/>
                 </Navitem>
-                <Navitem>
+                <Navitem to="products">
                     Products
                     <NavItemImage src={require("../../../Assets/images/slide.svg").default}/>
                 </Navitem>
-                <Navitem>
+                <Navitem to="/Hotselling">
                     Hot Selling
                     <NavItemImage src={require("../../../Assets/images/fire.svg").default}/>
                 </Navitem>
-                <Navitem>
+                <Navitem to="/ManageOrder">
                     Manage Order
                     <NavItemImage src={require("../../../Assets/images/oder.svg").default}/>
                 </Navitem>
-                <Navitem>
+                <Navitem to="/Payments">
                     Payments
                     <NavItemImage src={require("../../../Assets/images/Wallet.svg").default}/>
                 </Navitem>
-                <Navitem>
+                <Navitem to="/Settings">
                     Settings
                     <NavItemImage src={require("../../../Assets/images/Settings.svg").default}/>
                 </Navitem>
@@ -75,16 +76,32 @@ const Logo = styled.img`
 const NavItems = styled.div`
     padding: 30px 0;
 `;
-const Navitem = styled.div`
+const Navitem = styled(NavLink)`
     display: flex;
     justify-content: space-between;
     font-size: 20px;
     color: #5a5a5a;
     margin-top: 40px;
     font-family: 'Poppins-Medium';
+    &:hover {
+        filter: invert(8%) sepia(33%) saturate(6876%) hue-rotate(235deg)
+          brightness(90%) contrast(124%);
+      }
+      &.active {
+        filter: invert(8%) sepia(33%) saturate(6876%) hue-rotate(235deg)
+          brightness(90%) contrast(124%);
+          border-right: 2px solid ;
+          padding-right: 20px; 
+      }
 `;
 const NavItemImage = styled.img`
     display: block;
+    &:hover {
+        color: #3522ff;
+      }
+    &.active {
+        color: #3522ff;
+    }
 `;
 const NavBottom = styled.div`
     background-color: #f1f1f3;
