@@ -253,7 +253,10 @@ const LeftContainer = styled.div`
     width : 50%;
     display: flex;
     align-items: center;
-    
+    &:hover{
+        transform:translateX(10px);
+        cursor: pointer;
+    } 
 `;
 const ChatText = styled.a`
     color: #40448e;

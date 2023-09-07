@@ -73,7 +73,7 @@ const Logo = styled.img`
     display: block;
 `;
 const NavItems = styled.div`
-    padding: 50px 0;
+    padding: 30px 0;
 `;
 const Navitem = styled.div`
     display: flex;
@@ -115,6 +115,10 @@ const BottomContainer = styled.div`
     background-color: #333889;
     border-radius: 15px;
     padding: 15px 10px;
+    &:hover{
+        transform:translateX(6px);
+        cursor: pointer;
+    }
 `;
 const Content =styled.h4`
     color: #fff;
@@ -125,6 +129,7 @@ const ArrowImage =styled.div`
     transform : rotate(-90deg);
     width: 16px;
     margin-left: 5px;
+   
 `;
 const ArrowImg =styled.img`
     display: block;
