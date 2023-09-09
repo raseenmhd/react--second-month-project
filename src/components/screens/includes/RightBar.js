@@ -139,11 +139,18 @@ const Wrapper = styled.section`
     width: 35%;
     background-color: #f1f1f3;
     padding: 50px 55px;
+    @media (max-width: 1280px){
+        padding: 120px 60px;
+        width: 40%;
+      }
 `;
 const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 1280px){
+        justify-content: end;
+    }
 `;
 const NavLeft = styled.div`
     width: 20%;
@@ -152,6 +159,7 @@ const NavItems = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 `;
 const NavItem = styled.li`
     width: 25px;
@@ -166,6 +174,9 @@ const NavRight = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: 1280px){
+        display: none;
+    }
 `;
 const NavProfile = styled.div`
     width: 50px;

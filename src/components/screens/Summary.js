@@ -28,8 +28,9 @@ function Summary() {
           color: "#000",
           top: 18,
           left: 7,
-          blur: 10,
+          blur: 8,
           opacity: 0.2,
+        
         },
         toolbar: {
           show: true, 
@@ -363,7 +364,10 @@ function Summary() {
 const SummaryContainer =styled.section`
     padding: 45px 60px ;
     width: 45%; 
-    
+    @media (max-width: 1280px){
+      padding: 120px 60px;
+      width: 60%;
+    }
 `;
 const Header = styled.header`
 `;

@@ -64,6 +64,9 @@ function NavBar() {
                 </NavBottomBox>
             </NavBottom>
             </NavContainer>
+            <ProfileIcon>
+                <ProfileIconImage src={require("../../../Assets/images/Group 38.jpg")} />
+            </ProfileIcon>
         </Header>
      </Wrapper>
     </>
@@ -73,17 +76,35 @@ function NavBar() {
 const Wrapper = styled.section`
     width : 20%;
     border-right : 2px solid #d3d3d3;
-    @media (max)
+    @media (max-width: 1280px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-bottom: 1px solid #d3d3d3;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 10px 0px;
+        width: 100%;
+      }
 `;
 const Header = styled.header`
     padding: 50px 45px;
-   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    @media (max-width: 1280px) {
+        width: 100%;
+        padding: 22px 40px;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+      }
 `;
 const NavLogo = styled.a`
     display: block;
     width: 100%;
-    @media (max-width: 1380px) {
-        width: 95%;
+    @media (max-width: 1280px) {
+        width: 18%;
     }
 `;
 const Logo = styled.img`
@@ -110,7 +131,7 @@ const Navitem = styled(NavLink)`
           padding-right: 20px; 
     }
     @media (max-width: 1380px) {
-        font-size: 16px;
+        font-size: 20px;
     }
     
 `;
@@ -150,7 +171,7 @@ const NavBottomContent = styled.p`
     font-family: 'Poppins-bold';
     margin: 5px 0 10px;
     @media (max-width: 1380px) {
-        font-size: 17px;
+        font-size: 20px;
     }
 `;
 const BottomContainer = styled.div`
@@ -183,36 +204,50 @@ const ArrowImg =styled.img`
     display: block;
     width: 100%;
 `;
-const Menu = styled.div``;
-const MenuIcon = styled.img`
-  width: 25px;
-  height: 25px;
+const ProfileIcon = styled.div`
   display: none;
+  width: 45px;
   @media (max-width: 1280px) {
     display: block;
   }
 `;
+const ProfileIconImage = styled.img`
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+`;
+const Menu = styled.div``;
+const MenuIcon = styled.img`
+    display: none;
+    width: 25px;
+    height: 25px;
+    @media (max-width: 1280px) {
+        display: block;
+    }
+`;
 const NavContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  padding-top: 30px;
-  transition: 200ms ease-in-out;
-  background: #fff;
-  transform: translateX(0);
-  @media (max-width: 1280px) {
-    padding: 50px 40px;
-    transform: translateX(-100%);
-    position: fixed;
-    z-index: 3;
-    overflow-y: auto;
-    top: 0;
-    left: 0;
-    border-right: 1px solid #000;
-  }
-  &.navclose {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    padding-top: 30px;
+    transition: 200ms ease-in-out;
+    background: #fff;
     transform: translateX(0);
-  }
+    @media (max-width: 1280px) {
+        padding: 35px 40px;
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 3;
+        overflow-y: auto;
+        top: 0;
+        left: 0;
+        border-right: 1px solid #000;
+        background: #fff;
+        width: 30%;
+    }
+    &.navclose {
+        transform: translateX(0);
+    }
 `;
 export default NavBar;
