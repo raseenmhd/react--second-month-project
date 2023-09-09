@@ -106,6 +106,9 @@ const NavLogo = styled.a`
     @media (max-width: 1280px) {
         width: 18%;
     }
+    @media (max-width: 760px)  {
+    width: 26%;
+    }
 `;
 const Logo = styled.img`
     display: block;

@@ -140,9 +140,16 @@ const Wrapper = styled.section`
     background-color: #f1f1f3;
     padding: 50px 55px;
     @media (max-width: 1280px){
-        padding: 120px 60px;
+        padding: 120px 60px 90px;
         width: 40%;
       }
+    max-width: 1080px){
+        padding: 120px 40px 50px;
+        width: 40%;
+    }
+    @media (max-width: 980px){
+    padding: 120px 30px 90px;
+}
 `;
 const Header = styled.header`
     display: flex;
@@ -154,6 +161,9 @@ const Header = styled.header`
 `;
 const NavLeft = styled.div`
     width: 20%;
+    @media (max-width: 980px){
+        width: 25%;
+    }
 `;
 const NavItems = styled.ul`
     display: flex;
@@ -208,6 +218,12 @@ const NavArrowImage = styled.img`
     @media (max-width: 1320px){
         font-size: 24px;
     }
+    @media (max-width: 1080px){
+        font-size: 19px;
+    }
+    @media (max-width: 980px){
+    font-size: 18px;
+    }
  `;
  const MoreButton = styled.a`
     font-size: 16px; 
@@ -224,6 +240,9 @@ const ProductsItem = styled.ul`
 `;
 const ProductImageContainer = styled.li`
     width: 20%;
+    @media (max-width: 980px){
+        width: 23%;
+    }
 `;
 const ProductImage = styled.img`
     display: block;
@@ -259,7 +278,9 @@ const HelpText = styled.h3`
      font-size: 19px;
      font-family: 'Poppins-medium';
      max-width: 180px;
-     
+     @media (max-width: 1080px){
+        font-size: 17px;
+    }
 `;
 const ChatSection = styled.div`
     display: flex;

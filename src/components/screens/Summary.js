@@ -364,8 +364,13 @@ function Summary() {
 const SummaryContainer =styled.section`
     padding: 45px 60px ;
     width: 45%; 
-    @media (max-width: 1280px){
-      padding: 120px 60px;
+    @media (max-width: 1280px ){
+      padding: 120px 60px 90px ;
+      width: 60%;
+    }
+    
+    @media (max-width: 760px){
+      padding: 120px 30px 90px;
       width: 60%;
     }
 `;
@@ -396,6 +401,16 @@ const StatisticsContainer = styled.section`
     @media (max-width: 1380px){
         margin-top: 55px;
     }
+    @media (max-width: 1280px){
+      margin-top: 35px;
+  }
+    @media (max-width: 1080px) {
+      margin-top: 28px;
+    }
+    @media (max-width: 980px) {
+      margin-top: 28px;
+    }
+    
 `;
 const StatisticsTop = styled.div`
     display: flex;
@@ -413,6 +428,7 @@ const SelectOption = styled.select`
     @media (max-width: 1380px){
         width: 25%;
     }
+    
 `;
 const Options = styled.option`
 `;
@@ -420,9 +436,15 @@ const StatisticsMain = styled.div`
     display: flex;
     justify-content: space-between;
     margin-top: 35px;
+    @media (max-width: 980px){
+      display: block;
+    }
 `;
 const LeftContainer = styled.div`
     width: 46%;
+    @media (max-width: 980px){
+      width: 100%;
+    }
 `;
 const TopBox = styled.div`
     background-color: #f4e7e4;
@@ -475,6 +497,9 @@ const RightContainer = styled.div`
     };
     @media (max-width: 1380px){
       height: 320px;
+    }
+    @media (max-width: 980px){
+      width: 100%;
     }
 `;
 
