@@ -1,7 +1,279 @@
-import React from 'react'
+import React,{useState}from 'react'
 import { styled } from "styled-components";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
+import Chart from "react-apexcharts";
+
 function Summary() {
+  const [selectedOption, setSelectedOption] = useState("");
+  const handleSelectchange = (event) => {
+    setSelectedOption(event.target.value);
+  };
+  const data = {
+    series: [
+      {
+        name: "Income",
+        data: [1.7,0.97,1.2,0.72,1.45,3.1,0.11,0.8,1.5,1.8],
+      },
+      {
+        name: "Saving",
+        data: [0.9,1.9,1.0,2.2,1.3,1.4,2.6,1.5,1.5,1.8],
+      },
+    ],
+    options: {
+      chart: {
+        height: 350,
+        type: "line",
+        dropShadow: {
+          enabled: true,
+          color: "#000",
+          top: 18,
+          left: 7,
+          blur: 10,
+          opacity: 0.2,
+        },
+        toolbar: {
+          show: true, 
+        },
+      },
+      colors: ["lightblue", "darkblue"],
+      dataLabels: {
+        enabled: true,
+      },
+      stroke: {
+        curve: "smooth",
+      },
+      grid: {
+        borderColor: "#e7e7e7",
+        row: {
+          colors: ["#f3f3f3", "transparent"], 
+          opacity: 0.5,
+        },
+      },
+      markers: {
+        size: 1,
+      },
+      xaxis: {
+        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug","Sep","Oct"],
+        title: {
+          text: "Month",
+        },
+      },
+      yaxis: {
+        min: 0.01,
+        max: 3.30,
+      },
+      legend: {
+        position: "top",
+        horizontalAlign: "left",
+        floating: true,
+        offsetY: -25,
+        offsetX: -5,
+      },
+    },
+  };
+  const data1 = {
+    series: [
+      {
+        name: "Income",
+        data: [1.7,0.97,3.2,2.72,0.45,3.1,0.9,3.8,0.5,2.9],
+      },
+      {
+        name: "Saving",
+        data: [0.4,1.9,1.0,2.2,3.3,1.4,0.6,1.5,3.5,1.2],
+      },
+    ],
+    options: {
+      chart: {
+        height: 350,
+        type: "line",
+        dropShadow: {
+          enabled: true,
+          color: "#000",
+          top: 18,
+          left: 7,
+          blur: 10,
+          opacity: 0.2,
+        },
+        toolbar: {
+          show: true,
+        },
+      },
+      colors: ["lightblue", "darkblue"],
+      dataLabels: {
+        enabled: true,
+      },
+      stroke: {
+        curve: "smooth",
+      },
+      grid: {
+        borderColor: "#e7e7e7",
+        row: {
+          colors: ["#f3f3f3", "transparent"], 
+          opacity: 0.5,
+        },
+      },
+      markers: {
+        size: 1,
+      },
+      xaxis: {
+        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug","Sep","Oct"],
+        title: {
+          text: "Month",
+        },
+      },
+      yaxis: {
+        min: 0.01,
+        max: 3.30,
+      },
+      legend: {
+        position: "top",
+        horizontalAlign: "left",
+        floating: true,
+        offsetY: -25,
+        offsetX: -5,
+      },
+    },
+  };
+  const data2 = {
+    series: [
+      {
+        name: "Income",
+        data: [1.7,0.97,3.9,2.72,0.45,3.1,0.9,2.8,0.5,0.9],
+      },
+      {
+        name: "Saving",
+        data: [3.4,1.9,1.0,0.2,3.3,1.7,3.6,1.5,2.5,1.2],
+      },
+    ],
+    options: {
+      chart: {
+        height: 350,
+        type: "line",
+        dropShadow: {
+          enabled: true,
+          color: "#000",
+          top: 18,
+          left: 7,
+          blur: 10,
+          opacity: 0.2,
+        },
+        toolbar: {
+          show: true,
+        },
+      },
+      colors: ["lightblue", "darkblue"],
+      dataLabels: {
+        enabled: true,
+      },
+      stroke: {
+        curve: "smooth",
+      },
+      grid: {
+        borderColor: "#e7e7e7",
+        row: {
+          colors: ["#f3f3f3", "transparent"],
+          opacity: 0.5,
+        },
+      },
+      markers: {
+        size: 1,
+      },
+      xaxis: {
+        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug","Sep","Oct"],
+        title: {
+          text: "Month",
+        },
+      },
+      yaxis: {
+        min: 0.01,
+        max: 4,
+      },
+      legend: {
+        position: "top",
+        horizontalAlign: "left",
+        floating: true,
+        offsetY: -25,
+        offsetX: -5,
+      },
+    },
+  };
+  const data3 = {
+    series: [
+      {
+        name: "Income",
+        data: [2.2,2.97,0.2,3.72,2.45,0.1,1.11,2.8,0.5,3.8],
+      },
+      {
+        name: "Saving",
+        data: [0.9,3.9,2.0,1.2,3.3,0.4,2.6,3.5,0.5,3.8],
+      },
+    ],
+    options: {
+      chart: {
+        height: 350,
+        type: "line",
+        dropShadow: {
+          enabled: true,
+          color: "#000",
+          top: 18,
+          left: 7,
+          blur: 10,
+          opacity: 0.2,
+        },
+        toolbar: {
+          show: true,
+        },
+      },
+      colors: ["lightblue", "darkblue"],
+      dataLabels: {
+        enabled: true,
+      },
+      stroke: {
+        curve: "smooth",
+      },
+      grid: {
+        borderColor: "#e7e7e7",
+        row: {
+          colors: ["#f3f3f3", "transparent"], 
+          opacity: 0.5,
+        },
+      },
+      markers: {
+        size: 1,
+      },
+      xaxis: {
+        categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug","Sep","Oct"],
+        title: {
+          text: "Month",
+        },
+      },
+      yaxis: {
+        min: 0.01,
+        max: 4,
+      },
+      legend: {
+        position: "top",
+        horizontalAlign: "left",
+        floating: true,
+        offsetY: -25,
+        offsetX: -5,
+      },
+    },
+  };
+  const getChartData = () => {
+    switch (selectedOption) {
+      case "one-month":
+        return data;
+      case "3-months":
+        return data1;
+      case "6-months":
+        return data2;
+      case "1-year":
+        return data3;
+      default:
+        return data; 
+    }
+  };
   return (
     <>  
         <Helmet>
@@ -21,20 +293,14 @@ function Summary() {
                     <StatisticsHeading>
                         Statistics
                     </StatisticsHeading>
-                    <MonthlyStatements>
-                        <MonthOptions>
-                            6 Months
-                        </MonthOptions>
-                        <MonthOptions>
-                            3 Months
-                        </MonthOptions>
-                        <MonthOptions>
-                            1 Month
-                        </MonthOptions>
-                        <MonthOptions>
-                            1 year
-                        </MonthOptions>
-                    </MonthlyStatements>
+                    <SelectOption value={selectedOption} onChange={handleSelectchange}>
+                        <Options value="one-month" >
+                        1 Month
+                        </Options>
+                        <Options value="3-months">3 Month</Options>
+                        <Options value="6-months">6 Months</Options>
+                        <Options value="1-year">1 Year</Options>
+                    </SelectOption>
                 </StatisticsTop>
                 <StatisticsMain>
                     <LeftContainer>
@@ -62,9 +328,13 @@ function Summary() {
                         </BottomBox>
                     </LeftContainer>
                     <RightContainer>
-                        <GraphImageContainer>
-                            <SaleGraphImage src={require('../../Assets/images/Group 26.svg').default}/>
-                        </GraphImageContainer>
+                        
+                            <Chart
+                             options={getChartData().options} 
+                             series={getChartData().series}
+                             type="line"
+                             height={350}
+                            />
                     </RightContainer>
                 </StatisticsMain>
             </StatisticsContainer>
@@ -132,7 +402,7 @@ const StatisticsHeading = styled.h2`
     font-size: 27px;
     font-family: 'Poppins-medium';
 `;
-const MonthlyStatements = styled.select`
+const SelectOption = styled.select`
     font-size: 16px;
     width: 20%;
     font-family: 'Poppins-medium';
@@ -140,7 +410,7 @@ const MonthlyStatements = styled.select`
         width: 25%;
     }
 `;
-const MonthOptions = styled.option`
+const Options = styled.option`
 `;
 const StatisticsMain = styled.div`
     display: flex;
@@ -193,19 +463,17 @@ const BottomBox = styled.div`
 `;
 const RightContainer = styled.div`
     width: 50%;
-`;
-const GraphImageContainer = styled.div`
-    width: 100%;
-    height: 100px;
-    &:hover{
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    };
-`
-const SaleGraphImage = styled.img`
-    display: block;
-    width: 100%;
+    height: 340px;
     border-radius: 15px;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.0), 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+    &:hover{
+      box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    };
+    @media (max-width: 1380px){
+      height: 320px;
+    }
 `;
+
 const MarkrtingContainer = styled.div`
     margin-top: 100px;
     display: flex;
