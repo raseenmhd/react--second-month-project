@@ -1,7 +1,6 @@
 import React from 'react'
 import { styled } from "styled-components";
 import { Helmet } from 'react-helmet';
-
 function Summary() {
   return (
     <>  
@@ -63,7 +62,9 @@ function Summary() {
                         </BottomBox>
                     </LeftContainer>
                     <RightContainer>
-                        <SaleGraphImage src={require("../../Assets/images/Group 26.svg").default}/>
+                        <GraphImageContainer>
+                            <SaleGraphImage src={require('../../Assets/images/Group 26.svg').default}/>
+                        </GraphImageContainer>
                     </RightContainer>
                 </StatisticsMain>
             </StatisticsContainer>
@@ -92,6 +93,7 @@ function Summary() {
 const SummaryContainer =styled.section`
     padding: 45px 60px ;
     width: 45%; 
+    
 `;
 const Header = styled.header`
 `;
@@ -117,6 +119,9 @@ const SearchIcon = styled.img`
 `;
 const StatisticsContainer = styled.section`
     margin-top: 63px;
+    @media (max-width: 1380px){
+        margin-top: 55px;
+    }
 `;
 const StatisticsTop = styled.div`
     display: flex;
@@ -131,6 +136,9 @@ const MonthlyStatements = styled.select`
     font-size: 16px;
     width: 20%;
     font-family: 'Poppins-medium';
+    @media (max-width: 1380px){
+        width: 25%;
+    }
 `;
 const MonthOptions = styled.option`
 `;
@@ -150,6 +158,10 @@ const TopBox = styled.div`
     &:hover{
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     };
+    @media (max-width: 1380px){
+        padding: 20px;
+        margin-bottom: 25px;
+    }
     
 `;
 const DeliveryIcon = styled.div`
@@ -174,14 +186,21 @@ const BottomBox = styled.div`
     &:hover{
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     };
+    @media (max-width: 1380px){
+        padding: 20px;
+        margin-bottom: 25px;
+    }
 `;
 const RightContainer = styled.div`
     width: 50%;
-    border-radius: 15px;
+`;
+const GraphImageContainer = styled.div`
+    width: 100%;
+    height: 100px;
     &:hover{
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     };
-`;
+`
 const SaleGraphImage = styled.img`
     display: block;
     width: 100%;
@@ -191,6 +210,9 @@ const MarkrtingContainer = styled.div`
     margin-top: 100px;
     display: flex;
     justify-content: space-between;
+    @media (max-width: 1380px){
+        margin-top: 50px;
+    }
 `;
 const AddSection = styled.div`
     width: 45%;

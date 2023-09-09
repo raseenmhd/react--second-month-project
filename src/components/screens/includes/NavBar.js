@@ -1,36 +1,46 @@
-import React from 'react'
+import React, {useState}from 'react';
 import { NavLink } from 'react-router-dom';
-import styled from "styled-components"
+import styled from "styled-components";
+
+
 function NavBar() {
-  return (
+    const [navClose, setNavClose] = useState(false);
+    return (
     <>
      <Wrapper>
         <Header>
+            <Menu onClick={() => setNavClose(!navClose)}>
+                <MenuIcon src={require("../../../Assets/images/menu.svg").default} />
+            </Menu>
             <NavLogo>
                 <Logo src={require("../../../Assets/images/logo.svg").default} />
             </NavLogo>
+            <NavContainer className={navClose ? "navclose" : ""}>
+            <Menu onClick={() => setNavClose(!navClose)}>
+                <MenuIcon src={require("../../../Assets/images/Cross.svg").default} />
+            </Menu>
             <NavItems>
                 <Navitem to="/" classname={({isActive})=>(isActive ? "active" : "")}>
                     Summary 
                     <NavItemImage src={require("../../../Assets/images/Book.svg").default}/>
                 </Navitem>
-                <Navitem to="products">
+                <Navitem to="/products" classname={({isActive})=>(isActive ? "active" : "")} >
                     Products
                     <NavItemImage src={require("../../../Assets/images/slide.svg").default}/>
                 </Navitem>
-                <Navitem to="/Hotselling">
+                <Navitem to="/Hotselling" classname={({isActive})=>(isActive ? "active" : "")}>
                     Hot Selling
                     <NavItemImage src={require("../../../Assets/images/fire.svg").default}/>
                 </Navitem>
-                <Navitem to="/ManageOrder">
+                <Navitem to="/ManageOrder" classname={({isActive})=>(isActive ? "active" : "")}>
                     Manage Order
                     <NavItemImage src={require("../../../Assets/images/oder.svg").default}/>
                 </Navitem>
-                <Navitem to="/Payments">
+                <Navitem to="/Payments" classname={({isActive})=>(isActive ? "active" : "")}>
                     Payments
                     <NavItemImage src={require("../../../Assets/images/Wallet.svg").default}/>
                 </Navitem>
-                <Navitem to="/Settings">
+                <Navitem to="/Settings" classname={({isActive})=>(isActive ? "active" : "")}>
                     Settings
                     <NavItemImage src={require("../../../Assets/images/Settings.svg").default}/>
                 </Navitem>
@@ -53,28 +63,34 @@ function NavBar() {
                     </BottomContainer>
                 </NavBottomBox>
             </NavBottom>
+            </NavContainer>
         </Header>
      </Wrapper>
     </>
   )
 }
-export default NavBar;
+
 const Wrapper = styled.section`
     width : 20%;
     border-right : 2px solid #d3d3d3;
+    @media (max)
 `;
 const Header = styled.header`
     padding: 50px 45px;
+   
 `;
 const NavLogo = styled.a`
     display: block;
     width: 100%;
+    @media (max-width: 1380px) {
+        width: 95%;
+    }
 `;
 const Logo = styled.img`
     display: block;
+    width: 100%;
 `;
 const NavItems = styled.div`
-    padding: 30px 0;
 `;
 const Navitem = styled(NavLink)`
     display: flex;
@@ -86,13 +102,17 @@ const Navitem = styled(NavLink)`
     &:hover {
         filter: invert(8%) sepia(33%) saturate(6876%) hue-rotate(235deg)
           brightness(90%) contrast(124%);
-      }
+    }
       &.active {
         filter: invert(8%) sepia(33%) saturate(6876%) hue-rotate(235deg)
           brightness(90%) contrast(124%);
           border-right: 2px solid ;
           padding-right: 20px; 
-      }
+    }
+    @media (max-width: 1380px) {
+        font-size: 16px;
+    }
+    
 `;
 const NavItemImage = styled.img`
     display: block;
@@ -109,11 +129,17 @@ const NavBottom = styled.div`
     border-radius: 15px;
     margin-top: 180px;
     text-align: center;
+    @media (max-width: 1380px) { 
+        padding: 25px 20px;
+        margin-top: 150px;
+    }
 `;
 const NavBottomBox =styled.div`
 `;
 const NavBottomBoxImage = styled.div`
     width: 100%;
+    margin: 0 auto;
+    
 `;
 const BottomImg = styled.img`
     display: block;
@@ -123,6 +149,9 @@ const NavBottomContent = styled.p`
     font-size: 20px;
     font-family: 'Poppins-bold';
     margin: 5px 0 10px;
+    @media (max-width: 1380px) {
+        font-size: 17px;
+    }
 `;
 const BottomContainer = styled.div`
     margin: 0 auto;
@@ -141,6 +170,8 @@ const Content =styled.h4`
     color: #fff;
     font-size: 15px;
     font-family: 'Poppins-medium';
+    
+    
 `
 const ArrowImage =styled.div`
     transform : rotate(-90deg);
@@ -152,3 +183,36 @@ const ArrowImg =styled.img`
     display: block;
     width: 100%;
 `;
+const Menu = styled.div``;
+const MenuIcon = styled.img`
+  width: 25px;
+  height: 25px;
+  display: none;
+  @media (max-width: 1280px) {
+    display: block;
+  }
+`;
+const NavContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  padding-top: 30px;
+  transition: 200ms ease-in-out;
+  background: #fff;
+  transform: translateX(0);
+  @media (max-width: 1280px) {
+    padding: 50px 40px;
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 3;
+    overflow-y: auto;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #000;
+  }
+  &.navclose {
+    transform: translateX(0);
+  }
+`;
+export default NavBar;

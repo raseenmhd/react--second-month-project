@@ -194,6 +194,9 @@ const NavArrowImage = styled.img`
  const Heading = styled.h2`
     font-size: 27px; 
     font-family: 'Poppins-medium';
+    @media (max-width: 1320px){
+        font-size: 24px;
+    }
  `;
  const MoreButton = styled.a`
     font-size: 16px; 
@@ -237,6 +240,9 @@ const PriceTag = styled.img`
 const ContactSection = styled.div`
     width: 90%;    
     margin: 60px 0 0px 20px;
+    @media (max-width: 1380px){
+        margin: 0px 0 0px 20px;
+    }
 `;
 const HelpText = styled.h3`
      font-size: 19px;

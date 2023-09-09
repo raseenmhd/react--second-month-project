@@ -14,16 +14,15 @@ function App() {
     <>
     <Container>
       <Router>
-      <NavBar/>
-      <Routes>
-        <Route path="/" element={<Summary />}/>
-        <Route path="/products" element={<Products />} />
-        <Route path="/hotselling" element={<Hotselling />}/>
-        <Route path="/ManageOrder" element={<ManageOrder/>}/>
-        <Route path="/Payments" element={<Payments/>}/>
-        <Route path="/Settings" element={<Settings/>}/>
-      </Routes>
-        
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<Summary />}/>
+          <Route path="/products" element={<Products />} />
+          <Route path="/hotselling" element={<Hotselling />}/>
+          <Route path="/ManageOrder" element={<ManageOrder/>}/>
+          <Route path="/Payments" element={<Payments/>}/>
+          <Route path="/Settings" element={<Settings/>}/>
+        </Routes>
         <RightBar/>
       </Router> 
     </Container>

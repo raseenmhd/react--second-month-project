@@ -26,6 +26,7 @@ function Payments() {
 const Header = styled.header`
     padding: 45px 60px ;
     width: 45%; 
+    
 `;
 const SearchBar = styled.div`
     background-color: #d9d9d9;
