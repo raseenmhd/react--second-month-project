@@ -30,6 +30,9 @@ const Header = styled.header`
         padding-top: 120px ;
         width: 60%;
     }
+    @media (max-width: 480px){
+        width: 100%;
+      }
 `;
 const SearchBar = styled.div`
     background-color: #d9d9d9;

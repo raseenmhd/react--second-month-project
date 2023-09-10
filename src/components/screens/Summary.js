@@ -373,6 +373,16 @@ const SummaryContainer =styled.section`
       padding: 120px 30px 90px;
       width: 60%;
     }
+    @media (max-width: 760px){
+      width: 53%;
+    }
+    @media (max-width: 640px){
+      width: 60%;
+    }
+    @media (max-width: 480px){
+      width: 100%;
+    }
+    
 `;
 const Header = styled.header`
 `;
@@ -428,7 +438,12 @@ const SelectOption = styled.select`
     @media (max-width: 1380px){
         width: 25%;
     }
-    
+    @media (max-width: 760px){
+      width: 33%;
+    }
+    @media (max-width: 640px){
+      width: 43%;
+    }
 `;
 const Options = styled.option`
 `;
@@ -509,6 +524,9 @@ const MarkrtingContainer = styled.div`
     justify-content: space-between;
     @media (max-width: 1380px){
         margin-top: 50px;
+    }
+    @media (max-width: 640px){
+      display: none;
     }
 `;
 const AddSection = styled.div`

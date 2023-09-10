@@ -98,7 +98,8 @@ const Header = styled.header`
         justify-content: space-between;
         flex-direction: row;
         align-items: center;
-      }
+    }
+    
 `;
 const NavLogo = styled.a`
     display: block;
@@ -108,6 +109,9 @@ const NavLogo = styled.a`
     }
     @media (max-width: 760px)  {
     width: 26%;
+    }
+    @media (max-width: 480px){
+        width: 40%;
     }
 `;
 const Logo = styled.img`
@@ -136,7 +140,9 @@ const Navitem = styled(NavLink)`
     @media (max-width: 1380px) {
         font-size: 20px;
     }
-    
+    @media (max-width: 760px){
+        font-size: 17px;
+    }
 `;
 const NavItemImage = styled.img`
     display: block;
@@ -155,7 +161,7 @@ const NavBottom = styled.div`
     text-align: center;
     @media (max-width: 1380px) { 
         padding: 25px 20px;
-        margin-top: 150px;
+        margin-top: 110px;
     }
 `;
 const NavBottomBox =styled.div`
@@ -174,7 +180,7 @@ const NavBottomContent = styled.p`
     font-family: 'Poppins-bold';
     margin: 5px 0 10px;
     @media (max-width: 1380px) {
-        font-size: 20px;
+        font-size: 17px;
     }
 `;
 const BottomContainer = styled.div`
@@ -251,6 +257,18 @@ const NavContainer = styled.section`
     }
     &.navclose {
         transform: translateX(0);
+    }
+    @media (max-width: 760px){
+        width: 40%;
+    }
+    @media (max-width: 640px){
+    width: 50%;
+    }
+    @media (max-width: 480px){
+        width: 70%;
+    }
+    @media (max-width: 360px){
+        width: 77%;
     }
 `;
 export default NavBar;
