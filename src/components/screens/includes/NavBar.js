@@ -84,6 +84,7 @@ const Wrapper = styled.section`
         border-bottom: 1px solid #d3d3d3;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 10px 0px;
         width: 100%;
+        z-index: 1;
       }
 `;
 const Header = styled.header`
@@ -182,6 +183,9 @@ const NavBottomContent = styled.p`
     @media (max-width: 1380px) {
         font-size: 17px;
     }
+    @media (max-width: 640px) {
+        font-size: 16px;
+    }
 `;
 const BottomContainer = styled.div`
     margin: 0 auto;
@@ -254,9 +258,13 @@ const NavContainer = styled.section`
         border-right: 1px solid #000;
         background: #fff;
         width: 30%;
+        
     }
     &.navclose {
         transform: translateX(0);
+    } 
+    @media (max-width: 980px){
+        width: 35%;
     }
     @media (max-width: 760px){
         width: 40%;
